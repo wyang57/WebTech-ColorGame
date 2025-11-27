@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Color Match Challenge - Learn how to play">
+    <meta name="keywords" content="color game, instructions, how to play, RGB">
+    <title>Color Match Challenge - About</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        .instructions-section {
+            margin-bottom: 3rem;
+        }
+        
+        .instructions-section ol,
+        .instructions-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .instructions-section li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+        
+        .scoring-info {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        .credits-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eee;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">🎨 Color Match</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h1>HOW TO PLAY</h1>
+            
+            <div class="instructions-section">
+                <h2>Game Instructions</h2>
+                <ol>
+                    <li>A random target color will appear on the right side of the screen (or top on mobile).</li>
+                    <li>Use the RGB sliders to adjust the Red, Green, and Blue values to match the target color.</li>
+                    <li>Watch your color preview update in real-time as you move the sliders.</li>
+                    <li>Click <strong>Submit</strong> when you think you've matched the color.</li>
+                    <li>Your accuracy score will be calculated and displayed.</li>
+                    <li>Try to beat your average score and climb the leaderboard!</li>
+                </ol>
+            </div>
+            
+            <div class="instructions-section">
+                <h2>Scoring</h2>
+                <div class="scoring-info">
+                    <p><strong>How scores are calculated:</strong></p>
+                    <ul>
+                        <li><strong>100%</strong> = Perfect match (exact RGB values)</li>
+                        <li>Score decreases based on the distance between your color and the target color</li>
+                        <li>The distance is calculated using Euclidean distance in RGB color space</li>
+                        <li>Your average score is calculated from all your previous attempts</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="instructions-section">
+                <h2>Difficulty Levels</h2>
+                <ul>
+                    <li><strong>Easy:</strong> Large tolerance (±20 RGB) - More forgiving scoring</li>
+                    <li><strong>Medium:</strong> Standard tolerance (±15 RGB) - Balanced challenge</li>
+                    <li><strong>Hard:</strong> Strict tolerance (±10 RGB) - Maximum precision required</li>
+                </ul>
+            </div>
+            
+            <div class="instructions-section">
+                <h2>Color Filters</h2>
+                <p>You can customize your game experience with color filters:</p>
+                <ul>
+                    <li><strong>Exclude warm colors:</strong> Removes reds, oranges, and yellows from the game</li>
+                    <li><strong>Exclude cool colors:</strong> Removes blues, greens, and purples from the game</li>
+                    <li><strong>Grayscale only:</strong> Only grayscale colors will appear (great for training!)</li>
+                </ul>
+            </div>
+            
+            <div class="credits-section">
+                <h2>Credits</h2>
+                <p>Built for <strong>OIM3690 Web Technologies</strong></p>
+                <p style="color: #666; margin-top: 1rem;">
+                    This game demonstrates core web technologies: HTML5, CSS3, and vanilla JavaScript.
+                    All game logic runs entirely in the browser using localStorage for data persistence.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

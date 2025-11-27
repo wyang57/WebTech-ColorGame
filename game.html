@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Color Match Challenge - Match colors using RGB sliders">
+    <meta name="keywords" content="color game, RGB, color matching, challenge">
+    <title>Color Match Challenge - Game</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">🎨 Color Match</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html" class="active">Game</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h1 style="margin-bottom: 2rem;">Color Match Challenge</h1>
+            
+            <div class="game-container">
+                <!-- User Color Box -->
+                <div>
+                    <div id="user-color-box" class="color-box"></div>
+                    <div class="color-label">Your Color</div>
+                    <div id="user-rgb" class="color-rgb">RGB(128, 128, 128)</div>
+                </div>
+                
+                <!-- Target Color Box -->
+                <div>
+                    <div id="target-color-box" class="color-box"></div>
+                    <div class="color-label">Target Color</div>
+                    <div id="target-rgb" class="color-rgb">RGB(0, 0, 0)</div>
+                </div>
+            </div>
+            
+            <!-- RGB Sliders -->
+            <div class="slider-container">
+                <div class="slider-group">
+                    <label>
+                        <span>Red (R):</span>
+                        <span id="r-value" class="slider-value">128</span>
+                    </label>
+                    <input type="range" id="r-slider" class="slider slider-red" min="0" max="255" value="128">
+                </div>
+                
+                <div class="slider-group">
+                    <label>
+                        <span>Green (G):</span>
+                        <span id="g-value" class="slider-value">128</span>
+                    </label>
+                    <input type="range" id="g-slider" class="slider slider-green" min="0" max="255" value="128">
+                </div>
+                
+                <div class="slider-group">
+                    <label>
+                        <span>Blue (B):</span>
+                        <span id="b-value" class="slider-value">128</span>
+                    </label>
+                    <input type="range" id="b-slider" class="slider slider-blue" min="0" max="255" value="128">
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="submit-container">
+                <button id="submit-btn" class="btn submit-btn">SUBMIT</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- End Game Modal -->
+    <div id="end-game-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Round Complete!</h2>
+            <div id="score-display" class="score-display">0%</div>
+            <div id="average-display" class="average-display">Average: 0% accuracy</div>
+            <div class="modal-buttons">
+                <button id="continue-btn" class="btn">Continue?</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/game.js"></script>
+</body>
+</html>
+
