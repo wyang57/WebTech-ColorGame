@@ -3,6 +3,5 @@
   <circle cx="30" cy="30" r="15" fill="#ff6b6b"/>
   <circle cx="70" cy="30" r="15" fill="#50c878"/>
   <circle cx="50" cy="70" r="15" fill="#ffd93d"/>
-  <text x="50" y="95" font-size="40" text-anchor="middle" fill="white">🎨</text>
 </svg>
 
