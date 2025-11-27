@@ -1,12 +1,15 @@
 # Color Game - PRD
 
 ## Project Title
+
 Color Match Challenge
 
 ## One-Sentence Goal
+
 Provide an interactive game where users match colors from an API-generated target color using buttons, with adjustable difficulty and filters.
 
 ## Core Features
+
 - Random target color fetched from a color API.
 - Buttons with color options for the user to select, with tolerance for approximate matches (±10 or ±20 in RGB values).
 - Difficulty modes: Easy, Medium, Hard (changes tolerance or number of color options).
@@ -15,6 +18,7 @@ Provide an interactive game where users match colors from an API-generated targe
 - Optional login info for leaderboard submission.
 
 ## Intended Pages
+
 - **Homepage**: Game overview and start button.
 - **Game Page**: Main game interface with color matching buttons.
 - **Leaderboard Page**: Displays highscores and user info.
@@ -22,6 +26,7 @@ Provide an interactive game where users match colors from an API-generated targe
 - **About Page**: Instructions and credits.
 
 ## Design/Interaction Notes
+
 - Responsive layout using Flexbox/Grid.
 - Easy to hard modes adjust color matching tolerance and number of color buttons.
 - Users can submit scores after entering username.

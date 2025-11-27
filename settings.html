@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Color Match Challenge Settings - Configure difficulty and preferences">
+    <meta name="keywords" content="color game, settings, difficulty, RGB">
+    <title>Color Match Challenge - Settings</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">🎨 Color Match</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="settings.html" class="active">Settings</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h1>SETTINGS</h1>
+            
+            <form id="settings-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required maxlength="20" pattern=".*\S+.*" title="Username cannot be empty or only spaces">
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        Your username will be displayed on the leaderboard.
+                    </p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Difficulty:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <span><strong>Easy</strong> - Large tolerance (±20 RGB)</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="difficulty" value="medium">
+                            <span><strong>Medium</strong> - Standard tolerance (±15 RGB)</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="difficulty" value="hard">
+                            <span><strong>Hard</strong> - Strict tolerance (±10 RGB)</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Color Filters (optional):</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="colorFilters" value="excludeWarm">
+                            <span>Exclude warm colors (reds, oranges, yellows)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="colorFilters" value="excludeCool">
+                            <span>Exclude cool colors (blues, greens, purples)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="colorFilters" value="grayscale">
+                            <span>Grayscale only</span>
+                        </label>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        Color filters affect which colors appear in the game.
+                    </p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="button" id="save-settings-btn" class="btn btn-large">SAVE SETTINGS</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/settings.js"></script>
+</body>
+</html>
+

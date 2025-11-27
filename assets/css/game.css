@@ -1,0 +1,238 @@
+/* ============================================
+   Color Match Challenge - Game Page Styles
+   ============================================ */
+
+.game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.color-box {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--border-color);
+    transition: transform 0.3s;
+}
+
+.color-box:hover {
+    transform: scale(1.02);
+}
+
+.color-label {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.color-rgb {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-family: 'Courier New', monospace;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* RGB Sliders */
+.slider-container {
+    margin-top: 2rem;
+}
+
+.slider-group {
+    margin-bottom: 1.5rem;
+}
+
+.slider-group label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.slider-group .slider-value {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    min-width: 50px;
+    text-align: right;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #000, #fff);
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Red slider - default gray gradient, will be overridden by JS */
+.slider-red {
+    background: linear-gradient(to right, 
+        rgb(0, 128, 128),
+        rgb(255, 128, 128)
+    );
+}
+
+/* Green slider - default gray gradient, will be overridden by JS */
+.slider-green {
+    background: linear-gradient(to right,
+        rgb(128, 0, 128),
+        rgb(128, 255, 128)
+    );
+}
+
+/* Blue slider - default gray gradient, will be overridden by JS */
+.slider-blue {
+    background: linear-gradient(to right,
+        rgb(128, 128, 0),
+        rgb(128, 128, 255)
+    );
+}
+
+.submit-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.submit-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .color-box {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .slider-container {
+        margin-top: 1rem;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.score-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.average-display {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-buttons .btn {
+    min-width: 150px;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .score-display {
+        font-size: 2rem;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-buttons .btn {
+        width: 100%;
+    }
+}
+
