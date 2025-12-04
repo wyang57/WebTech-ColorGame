@@ -29,7 +29,6 @@ function initializeGame() {
     
     // Display target color
     updateColorDisplay('target-color-box', targetColor);
-    updateColorRGB('target-rgb', targetColor);
     
     // Initialize sliders
     const rSlider = document.getElementById('r-slider');
@@ -122,7 +121,6 @@ function updateSliderStyles() {
 
 function updateUserColor() {
     updateColorDisplay('user-color-box', currentUserColor);
-    updateColorRGB('user-rgb', currentUserColor);
     
     // Update slider value displays
     const rValue = document.getElementById('r-value');
@@ -141,12 +139,6 @@ function updateColorDisplay(elementId, color) {
     }
 }
 
-function updateColorRGB(elementId, color) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        element.textContent = `RGB(${color.r}, ${color.g}, ${color.b})`;
-    }
-}
 
 function handleSubmit() {
     if (!targetColor) {
@@ -220,9 +212,8 @@ function resetGame() {
     targetColor = applyColorFilters(targetColor, settings.colorFilters);
     
     // Update displays
+    updateColorDisplay('target-color-box', targetColor);
     updateSliderStyles();
     updateUserColor();
-    updateColorDisplay('target-color-box', targetColor);
-    updateColorRGB('target-rgb', targetColor);
 }
 
