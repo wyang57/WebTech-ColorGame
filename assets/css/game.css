@@ -2,6 +2,18 @@
    Color Match Challenge - Game Page Styles
    ============================================ */
 
+/* Vibrant static background for game page */
+body.game-page {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.35) 0%,
+        rgba(80, 200, 120, 0.35) 25%,
+        rgba(255, 107, 107, 0.35) 50%,
+        rgba(147, 51, 234, 0.35) 75%,
+        rgba(74, 144, 226, 0.35) 100%
+    );
+    position: relative;
+}
+
 .game-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
